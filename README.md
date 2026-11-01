@@ -36,7 +36,7 @@ gameboard ne garde que le **meilleur score de chaque prénom**.
 
 ## Build et déploiement
 
-Le « build » n'est qu'une **copie** : `npm run build` copie les fichiers de `game.json` dans `dist/`. Le déploiement (stack WEB_STACK, `deploy/scripts/`) copie `dist/` dans `web/jeux.kassir.fr/jeux/bulles/`, dossier servi par le portail. Sans redémarrage de conteneur.
+Le « build » n'est qu'une **copie** : `npm run build` copie les fichiers de `game.json` dans `dist/`. Le déploiement (stack WEB_STACK, `deploy/scripts/`) copie `dist/` dans `web/jeux.kassir.fr/games/bulles/public/`, dossier servi par le portail. Sans redémarrage de conteneur.
 
 Il faut aussi une entrée dans le catalogue de gameboard (`games.json`) et un classement `bulles` dans `src/games.js` : c'est déjà fait.
 

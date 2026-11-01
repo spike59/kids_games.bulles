@@ -1,0 +1,9 @@
+{
+  "id": "bulles",
+  "title": "Bulles",
+  "icon": "🫧",
+  "color": "#2f9fe6",
+  "type": "static",
+  "files": ["index.html", "bulles.js", "bulles.css", "icon.svg"],
+  "scores": { "board": "bulles", "order": "desc" }
+}

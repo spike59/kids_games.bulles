@@ -1,0 +1,11 @@
+{
+  "name": "bulles",
+  "version": "1.0.0",
+  "description": "Bulles : jeu pour tout-petits, on éclate des bulles du doigt. Jeu statique sans serveur (jeux.kassir.fr/jeux/bulles/)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}

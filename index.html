@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#2f9fe6">
+  <title>Bulles</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="bulles.css">
+  <script type="module" src="bulles.js"></script>
+</head>
+<body>
+  <header class="bar">
+    <button class="back" id="quit" type="button">⬅ Quitter</button>
+    <span class="score" aria-live="polite">🫧 <span id="score">0</span></span>
+  </header>
+  <main id="sky" class="sky"></main>
+
+  <dialog id="finish" aria-labelledby="finish-title">
+    <form method="dialog" id="finish-form">
+      <h2 id="finish-title">🫧 <span id="finish-score">0</span> bulles !</h2>
+      <label>Ton prénom pour le classement
+        <input id="name" name="name" maxlength="16" autocomplete="off" autocapitalize="words" placeholder="Prénom">
+      </label>
+      <p class="hint" id="finish-hint" hidden></p>
+      <div class="buttons">
+        <button type="submit" value="send" class="primary">Envoyer et quitter</button>
+        <button type="submit" value="skip" formnovalidate>Quitter sans envoyer</button>
+        <button type="submit" value="stay" formnovalidate>Continuer à jouer</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

@@ -61,3 +61,40 @@ dialog button {
   background: #e8f4fd; color: #17436b;
 }
 dialog button.primary { background: #2f9fe6; color: #fff; }
+
+/* barre : Quitter à gauche, outils au milieu, score à droite */
+.tools { display: flex; gap: 8px; }
+.tools .back { padding: 10px 14px; }
+
+/* pause (seul) : tout s'arrête */
+body.paused .bubble, body.paused .ball { animation-play-state: paused; }
+
+/* à plusieurs : le contour de l'écran prend ta couleur, c'est celle des bulles à éclater */
+.frame { position: fixed; inset: 0; z-index: 1; pointer-events: none; display: none; border-radius: 0; }
+body.multi .frame { display: block; box-shadow: inset 0 0 0 12px var(--me, #fff), inset 0 0 40px 10px var(--me, #fff); }
+.frame.penalty { animation: penalty .35s ease-out; }
+@keyframes penalty { 30% { background: rgb(255 0 0 / .35); } }
+
+.hud { position: fixed; top: calc(70px + env(safe-area-inset-top)); left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 0 20px; pointer-events: none; font-size: 16px; }
+.players { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip, .time { background: rgb(0 0 0 / .3); padding: 6px 10px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; }
+.chip.me { outline: 2px solid #fff; }
+.dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--c, #fff); border: 2px solid rgb(255 255 255 / .8); }
+
+/* fenêtre « à plusieurs » */
+#multi { width: min(94vw, 460px); max-height: 92dvh; overflow: auto; }
+#multi h3 { margin: 16px 0 6px; font-size: 18px; }
+#multi .x { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; padding: 0; }
+#multi .server { margin: 0; font-size: 15px; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.list li { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 12px; background: #eef7fd; }
+.list li span { flex: 1; }
+.list li button { padding: 8px 12px; }
+.list .empty { color: #5a7a96; justify-content: center; }
+.scores { counter-reset: none; }
+dialog .hint.ok { color: #2a6b3a; }
+.chat { height: 120px; overflow: auto; padding: 8px 10px; border-radius: 12px; background: #eef7fd; font-size: 15px; font-weight: 600; }
+.chat p { margin: 0 0 4px; }
+.chat-form { display: flex; gap: 8px; margin-top: 8px; }
+.chat-form input { margin: 0; }
+.chat-form button { padding: 10px 14px; white-space: nowrap; }

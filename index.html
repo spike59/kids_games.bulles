@@ -12,8 +12,17 @@
 <body>
   <header class="bar">
     <button class="back" id="quit" type="button">⬅ Quitter</button>
+    <span class="tools">
+      <button class="back" id="pause" type="button" aria-label="Pause">⏸</button>
+      <button class="back" id="multi-btn" type="button" aria-label="Jouer à plusieurs">👥</button>
+    </span>
     <span class="score" aria-live="polite">🫧 <span id="score">0</span></span>
   </header>
+  <div id="hud" class="hud" hidden>
+    <span id="hud-players" class="players"></span>
+    <span class="time">⏱ <span id="hud-time">60</span></span>
+  </div>
+  <div id="frame" class="frame" aria-hidden="true"></div>
   <main id="sky" class="sky"></main>
 
   <dialog id="finish" aria-labelledby="finish-title">
@@ -29,6 +38,66 @@
         <button type="submit" value="stay" formnovalidate>Continuer à jouer</button>
       </div>
     </form>
+  </dialog>
+
+  <dialog id="pause-dialog" aria-labelledby="pause-title">
+    <form method="dialog" id="pause-form">
+      <h2 id="pause-title">⏸ Pause</h2>
+      <p class="hint ok">Ton score est enregistré s'il bat ton record.</p>
+      <div class="buttons">
+        <button type="submit" value="resume" class="primary">Continuer à jouer</button>
+        <button type="submit" value="quit">Quitter</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="multi" aria-labelledby="m-title">
+    <h2 id="m-title">👥 Bulles à plusieurs</h2>
+    <button id="m-close" class="x" type="button" aria-label="Fermer">✕</button>
+
+    <section id="m-login">
+      <form id="m-login-form">
+        <label>Ton prénom
+          <input id="m-name" maxlength="16" autocomplete="off" autocapitalize="words" placeholder="Prénom">
+        </label>
+        <p class="hint" id="m-hint" hidden></p>
+        <div class="buttons"><button type="submit" class="primary">Entrer dans le salon</button></div>
+      </form>
+    </section>
+
+    <section id="m-lobby" hidden>
+      <p class="server">🖥️ <b id="m-server">Serveur 01</b> · ping <b id="m-ping">…</b></p>
+      <h3>Salles ouvertes</h3>
+      <ul id="m-rooms" class="list"></ul>
+      <p class="hint" id="m-lobby-hint" hidden></p>
+      <div class="buttons"><button type="button" id="m-create" class="primary">Créer une salle</button></div>
+      <h3>Discussion</h3>
+      <div id="m-chat" class="chat" aria-live="polite"></div>
+      <form id="m-chat-form" class="chat-form">
+        <input id="m-chat-text" maxlength="120" autocomplete="off" placeholder="Écrire un message">
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section id="m-room" hidden>
+      <h3 id="m-room-title"></h3>
+      <ul id="m-players" class="list"></ul>
+      <p id="m-wait" class="hint ok"></p>
+      <p class="hint" id="m-room-hint" hidden></p>
+      <div class="buttons">
+        <button type="button" id="m-start" class="primary">Lancer la partie</button>
+        <button type="button" id="m-leave">Quitter la salle</button>
+      </div>
+    </section>
+
+    <section id="m-result" hidden>
+      <h3>🏁 Résultats</h3>
+      <ol id="m-scores" class="list scores"></ol>
+      <div class="buttons">
+        <button type="button" id="m-again" class="primary">Rejouer</button>
+        <button type="button" id="m-result-leave">Quitter</button>
+      </div>
+    </section>
   </dialog>
 </body>
 </html>

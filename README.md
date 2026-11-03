@@ -47,3 +47,7 @@ npm start   # http://127.0.0.1:5190/jeux/bulles/
 ```
 
 L'envoi du score échoue sans bruit (pas de gameboard) et « Quitter » ramène à `/`.
+
+## À plusieurs (1.1.0)
+
+Bouton 👥 : salon (prénom, chat), salles de 2 à 6 joueurs, manches de 60 s. Une couleur par joueur ; les bulles portent la couleur d'un joueur. Sa couleur : +1 ; celle d'un autre : −5. Le contour de l'écran prend sa couleur. Le serveur (hub de gameboard, `serveur01`) crée les bulles et compte les points ; le navigateur n'envoie que « j'éclate la bulle N ». Score envoyé au classement « Bulles à plusieurs » à la fin de manche, en pause, en quittant ou en fermant la page, s'il bat le record. Fichiers : `core.js` (commun), `multi.js` (salon et partie), `bulles.js` (seul).

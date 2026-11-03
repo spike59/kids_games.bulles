@@ -4,6 +4,19 @@
   "icon": "🫧",
   "color": "#2f9fe6",
   "type": "static",
-  "files": ["index.html", "bulles.js", "bulles.css", "icon.svg"],
-  "scores": { "board": "bulles", "order": "desc" }
+  "files": [
+    "index.html",
+    "bulles.js",
+    "core.js",
+    "multi.js",
+    "bulles.css",
+    "icon.svg"
+  ],
+  "scores": {
+    "board": "bulles",
+    "order": "desc",
+    "more": [
+      "bulles_multi"
+    ]
+  }
 }

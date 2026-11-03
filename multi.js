@@ -11,6 +11,7 @@ const GAME = 'bulles';
 
 let ws = null;
 let hooks = {};
+let intent = null; // arrivée depuis le salon du site : { room } pour rejoindre, { create: true } pour créer
 let me = null; // { id, name }
 let room = null; // la salle où l'on est (état envoyé par le serveur)
 let mode = 'login'; // login | lobby | room | playing | result
@@ -35,11 +36,14 @@ const myColor = () => room?.players.find((p) => p.id === me?.id)?.color ?? '#fff
 
 export function open(h) {
   hooks = h;
+  intent = h.intent ?? null;
   $('m-name').value = savedName();
   say('m-hint', '');
   show('login');
   if (!dlg.open) dlg.showModal();
   $('m-name').focus();
+  // venu du salon avec un prénom déjà connu : on entre directement
+  if (intent && NAME.test(cleanName(savedName()))) connect(cleanName(savedName()));
 }
 
 function connect(name) {
@@ -70,6 +74,7 @@ function onMessage(m) {
       $('m-chat').replaceChildren();
       for (const line of m.history ?? []) chat(line);
       show('lobby');
+      if (intent) { send(intent.room ? { t: 'join', room: intent.room } : { t: 'create', game: GAME }); intent = null; }
       ping();
       pingTimer = setInterval(ping, 2000);
       break;

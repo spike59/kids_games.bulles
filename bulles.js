@@ -84,13 +84,22 @@ document.getElementById('finish-form').addEventListener('submit', async (event) 
 });
 
 // --- à plusieurs ---
-document.getElementById('multi-btn').addEventListener('click', async () => {
+async function openMulti(intent = null) {
   multi ??= await import('./multi.js');
   multi.open({
+    intent,
     onStart() { solo = false; setPaused(false); sky.replaceChildren(); },
     onStop() { solo = true; sky.replaceChildren(); setScore(0); state.board = 'bulles'; },
   });
-});
+}
+document.getElementById('multi-btn').addEventListener('click', () => openMulti());
+
+// arrivée depuis le salon multijoueur du site : ?room=<id> rejoint une salle, ?create=1 en crée une
+{
+  const q = new URLSearchParams(location.search);
+  if (q.has('room')) openMulti({ room: q.get('room') });
+  else if (q.has('create')) openMulti({ create: true });
+}
 
 setInterval(spawn, 700);
 spawn();

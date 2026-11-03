@@ -6,6 +6,7 @@ const scoreEl = document.getElementById('score');
 const SCORES_URL = '../../api/v1/public-scores';
 export const HOME_URL = '../../';
 const NAME_KEY = 'bulles.player';
+const SITE_NAME_KEY = 'kassir.player'; // le prénom est commun à tous les jeux du site (salon multijoueur compris)
 export const NAME = /^[\p{L}\p{N}][\p{L}\p{N} '_-]{0,15}$/u; // mêmes règles que gameboard
 
 // score = le score de la partie en cours ; board = le classement visé (« bulles » en solo, « bulles_multi » à plusieurs)
@@ -65,10 +66,10 @@ export function pop(b, withSound = true) {
 
 // --- envoi du score ---
 export const savedName = () => {
-  try { return localStorage.getItem(NAME_KEY) || ''; } catch { return ''; }
+  try { return localStorage.getItem(NAME_KEY) || localStorage.getItem(SITE_NAME_KEY) || ''; } catch { return ''; }
 };
 export const saveName = (name) => {
-  try { localStorage.setItem(NAME_KEY, name); } catch { /* navigation privée : tant pis */ }
+  try { localStorage.setItem(NAME_KEY, name); localStorage.setItem(SITE_NAME_KEY, name); } catch { /* navigation privée : tant pis */ }
 };
 export const cleanName = (s) => s.normalize('NFC').trim().replace(/\s+/g, ' ');
 

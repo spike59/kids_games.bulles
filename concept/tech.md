@@ -1,13 +1,13 @@
 # Tech : bulles
 
-**Groupe** : `web-game` (kassir_devops : `concept/groups/techs/web-game/README.md`, dépôt principal). Ce fichier ne décrit que ce qui est propre au projet ; la base commune est dans le groupe.
+**Stack** : `web_game` (kassir_devops : `concept/tech/stacks/web_game.md`, dépôt principal). Ce fichier ne décrit que ce qui est propre au projet ; la base commune est dans la fiche de la stack.
 
 ## Stack
-Variante statique du groupe `web-game` (`dist/`, `game.json`).
+Variante statique de la stack `web_game` (`dist/`, `game.json`).
 
-## Écarts au groupe
+## Écarts à la stack
 Pas de `api/ ui/ data/` (jeu statique).
 
 ## Voir aussi
 - `apps/bulles/README.md` : lancement, API, tests.
-- Liste des techs et de leurs utilisateurs : `concept/techs.md` du dépôt principal.
+- Liste des techs et de leurs utilisateurs : `concept/tech/techs.md` du dépôt principal.

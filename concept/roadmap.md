@@ -3,11 +3,11 @@
 Instantané du 2026-11-08. Version courante : 1.2.0 (jeu statique, multijoueur par salons).
 
 ## 1.3.0 (prochaine)
-- **Prénom d'un enfant au classement public** : accord d'un parent pour un enfant de moins de 15 ans (majorité numérique), voir `web_private/secure/concept/ideas/securite-hebergement.md`.
-- Scores : aujourd'hui envoyés par le navigateur donc falsifiables ; passer à un envoi vérifié (serveur avec clé) ou accepter la limite et l'afficher.
+- gameboard-002 : scores vérifiés par le serveur (`bulles` envoie encore ses scores depuis le navigateur)
+- Idée `prenom-d-enfant-au-classement-public` (gameboard) : prénom d'un enfant au classement public, accord d'un parent en dessous de 15 ans (`mineurs-et-majorite-numerique`, principal)
 
 ## next
-- Bouton « Mettre à jour » dans Secure / game_manager pour les jeux statiques (aujourd'hui `deploy/scripts/publish-static.js`).
+- game_manager-007-bouton-mettre-a-jour-des-jeux-statiques : bouton « Mettre à jour » pour les jeux statiques (aujourd'hui `deploy/scripts/publish-static.js`)
 
 ### Mis de côté
 - —

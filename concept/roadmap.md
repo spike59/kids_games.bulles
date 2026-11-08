@@ -14,7 +14,7 @@ Instantané du 2026-11-08. Version courante : 1.2.0 (jeu statique, multijoueur p
 
 ## Versions passées
 
-Une ligne par version publiée (détail : `concept/release/<version>.md`).
+Une ligne par version publiée (détail : `concept/releases/<version>.md`).
 
 - **1.2.0** (2026-11-04) : Rejoindre depuis le salon
 - **1.1.0** (2026-11-04) : Bulles à plusieurs et pause

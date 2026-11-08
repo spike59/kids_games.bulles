@@ -11,3 +11,11 @@ Instantané du 2026-11-08. Version courante : 1.2.0 (jeu statique, multijoueur p
 
 ## Plus tard / mis de côté
 - —
+
+## Déjà développé
+
+Une ligne par version publiée (détail : `concept/release/<version>.md`).
+
+- **1.2.0** (2026-11-04) : Rejoindre depuis le salon
+- **1.1.0** (2026-11-04) : Bulles à plusieurs et pause
+- **1.0.0** (2026-11-01) : Suivi git, bouton Quitter et classement

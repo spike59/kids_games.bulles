@@ -18,5 +18,29 @@
     "more": [
       "bulles_multi"
     ]
-  }
+  },
+  "modes": [
+    "solo",
+    "online-server"
+  ],
+  "needsOnline": false,
+  "players": {
+    "min": 1,
+    "max": 6,
+    "note": "en ligne : 2 à 6 par salon"
+  },
+  "controllers": [
+    "touch"
+  ],
+  "modeTags": {
+    "online-server": [
+      "hub-room",
+      "authoritative"
+    ]
+  },
+  "server": {
+    "now": "hub de gameboard (serveur01)",
+    "target": "swordfish"
+  },
+  "analysedOn": "2026-11-10"
 }

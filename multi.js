@@ -2,7 +2,7 @@
 // Le serveur (hub de gameboard, serveur01) décide de tout : il crée les bulles et compte les points.
 // Ici on affiche ce qu'il envoie et on lui dit « j'éclate la bulle 12 ». Chacun a une couleur : sa couleur = +1 point,
 // la couleur d'un autre = −5 points. Le contour de l'écran prend la couleur des bulles qu'on doit éclater.
-import { sky, state, setScore, makeBubble, pop, savedName, saveName, cleanName, NAME, flushScore } from './core.js';
+import { sky, state, setScore, makeBubble, pop, savedName, saveName, cleanName, NAME } from './core.js';
 
 const $ = (id) => document.getElementById(id);
 const dlg = $('multi');
@@ -47,7 +47,7 @@ export function open(h) {
 }
 
 function connect(name) {
-  const url = new URL('../../api/v1/hub', location.href);
+  const url = new URL('../../jeux/swordfish/hub', location.href);
   url.protocol = url.protocol === 'https:' ? 'wss:' : 'ws:';
   say('m-hint', 'Connexion…');
   ws = new WebSocket(url);
@@ -194,7 +194,7 @@ function stopPlay() {
 function endPlay(scores) {
   const mine = scores.find((s) => s.id === me.id);
   if (mine) setScore(mine.score);
-  flushScore(); // fin de manche : le score part au classement s'il bat le record
+  // à plusieurs, les scores sont envoyés par le serveur (swordfish) avec sa clé, pas par le navigateur
   mode = 'result';
   stopPlay();
   sky.replaceChildren();

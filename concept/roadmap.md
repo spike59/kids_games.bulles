@@ -7,6 +7,8 @@ Instantané du 2026-11-08. Version courante : 1.2.0 (jeu statique, multijoueur p
 - Idée `prenom-d-enfant-au-classement-public` (gameboard) : prénom d'un enfant au classement public, accord d'un parent en dessous de 15 ans (`mineurs-et-majorite-numerique`, principal)
 
 ## next
+- bulles-002 : passer sur swordfish (chantier multijoueur-normalise)
+- ~~bulles-001 : classer les modes et serveur (chantier mise-a-jour-des-cards)~~ : fait le 2026-11-10
 - game_manager-007-bouton-mettre-a-jour-des-jeux-statiques : bouton « Mettre à jour » pour les jeux statiques (aujourd'hui `deploy/scripts/publish-static.js`)
 
 ### Mis de côté
